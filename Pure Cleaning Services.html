@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pure Cleaning Services</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Nunito+Sans:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#f4f8ff;--card:#fff;--ink:#0c2340;--mute:#5b6f8a;--line:#dce6f3;--blue:#1456c8;--navy:#0b3b8c;--em:#0e9f65;--bad:#d6453d;--warn:#b97a06;--soft:#e8f1ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1628;--card:#12233d;--ink:#eaf2ff;--mute:#93a8c6;--line:#23395a;--blue:#2f6fe0;--em:#2fd08a;--bad:#ff7a70;--warn:#e8b04a;--soft:#17305a}}
+:root[data-theme="dark"]{--bg:#0a1628;--card:#12233d;--ink:#eaf2ff;--mute:#93a8c6;--line:#23395a;--blue:#2f6fe0;--em:#2fd08a;--bad:#ff7a70;--warn:#e8b04a;--soft:#17305a;color-scheme:dark}
+*{box-sizing:border-box;margin:0}html,body{background:var(--bg);color:var(--ink);font:400 15px/1.5 "Nunito Sans",system-ui,sans-serif}
+body{max-width:560px;margin:0 auto;padding-bottom:90px}body.w{max-width:1000px;padding-bottom:30px}
+h1,h2,h3,.hd{font-family:Sora,system-ui,sans-serif;font-weight:700}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--em);outline-offset:2px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:14px 16px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+.logo{font-size:18px;color:var(--navy)}.logo b{color:var(--em)}@media(prefers-color-scheme:dark){.logo{color:var(--ink)}}
+.btn{background:var(--blue);color:#fff;font-weight:800;padding:11px 18px;border-radius:12px}.btn.f{width:100%}.btn.g{background:var(--em)}.btn.o{background:none;border:1px solid var(--line);color:var(--ink);font-weight:600}.btn.r{background:none;border:1px solid var(--bad);color:var(--bad)}.btn.s{padding:5px 11px;font-size:13px}.btn:disabled{opacity:.5}
+.hero{margin:14px 16px;padding:24px 20px;border-radius:18px;background:linear-gradient(135deg,var(--navy),var(--blue) 70%,var(--em) 140%);color:#fff}.hero h2{font-size:25px;line-height:1.2}.hero p{margin:8px 0 14px;opacity:.9}.hero .btn{background:#fff;color:var(--navy)}
+.sec{padding:8px 16px}.row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.sv{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sv button{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}.sv i{font-style:normal;font-size:30px;display:block}.sv b{display:block}.sv small,.mute{color:var(--mute)}.pr{color:var(--em);font-weight:800}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:560px;display:flex;background:var(--card);border-top:1px solid var(--line);padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));z-index:6}
+nav button{flex:1;color:var(--mute);font-size:12px}nav button.on{color:var(--blue);font-weight:800}nav span{display:block;font-size:20px}
+.fab{position:fixed;right:14px;bottom:86px;z-index:7;background:var(--em);color:#fff;border-radius:99px;padding:12px 18px;font-weight:800;box-shadow:0 4px 14px #0004}
+.ov{position:fixed;inset:0;background:#0007;z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:18px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+label{display:block;margin:11px 0 4px;color:var(--mute);font-size:13px}
+input,select,textarea{width:100%;padding:11px 12px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.err{color:var(--bad);font-size:13px;min-height:18px;margin:6px 0}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 16px}.tabs button{padding:8px 15px;border-radius:99px;border:1px solid var(--line);color:var(--mute);white-space:nowrap}.tabs .on{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:800}
+.pill{display:inline-block;padding:1px 10px;border-radius:99px;font-size:12px;font-weight:800;border:1px solid}.ok{color:var(--em)}.wn{color:var(--warn)}.bd{color:var(--bad)}.pill{border-color:currentColor}
+.net{display:grid;grid-template-columns:1fr 1fr;gap:8px}.net button{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);text-align:left}.net .on{border-color:var(--em);box-shadow:inset 0 0 0 1px var(--em)}
+.st{display:flex;gap:10px;padding-bottom:10px;position:relative;color:var(--mute);font-size:14px}.st::before{content:"";position:absolute;left:7px;top:16px;bottom:0;width:2px;background:var(--line)}.st:last-child::before{display:none}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);flex:none;background:var(--bg)}.st.d{color:var(--ink)}.st.d .dot{background:var(--em);border-color:var(--em)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}.stats b{display:block;font-size:20px;color:var(--blue)}
+.msg{padding:9px 12px;border-radius:14px;margin:6px 0;max-width:88%;white-space:pre-wrap}.me{background:var(--blue);color:#fff;margin-left:auto}.ai{background:var(--soft)}
+.chat{height:46vh;overflow:auto;padding:4px}.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--em);color:#fff;padding:9px 16px;border-radius:99px;font-weight:800;z-index:30}
+.lg{position:fixed;left:12px;bottom:90px;z-index:7;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:13px;font-weight:800;color:var(--blue)}.empty{text-align:center;color:var(--mute);padding:34px 12px}.rm{background:var(--soft);border:1px solid var(--em)}
+</style></head><body><div id="app"><div class="empty">Loading Pure Cleaning Services…</div></div><div id="ov"></div>
+<script>
+const SV=[{id:"wash",n:"Laundry, wash and fold",e:"🧺",p:1500,u:"item",f:14,d:"Washed, dried and folded. Priced per clothing item."},{id:"dry",n:"Dry cleaning",e:"👔",p:6000,u:"item",f:14,d:"Suits, kaunda sets, dresses and delicate fabrics."},{id:"carpet",n:"Carpet cleaning",e:"🧶",p:5000,u:"m²",f:90,d:"Deep shampoo and extraction. Priced per square metre."},{id:"house",n:"Deep house cleaning",e:"🏠",p:35000,u:"room",f:90,d:"Floors, kitchen, bathrooms and windows. Priced per room."}];
+const REG={"Dar es Salaam":["Kinondoni","Chang'ombe","Mikocheni","Mbezi Beach","Kariakoo","Temeke","Ubungo"],"Dodoma":["Area D","Makulu","Kikuyu","Nzuguni"],"Arusha":["Njiro","Sakina","Kijenge","Themi"],"Mwanza":["Nyamagana","Ilemela","Buhongwa"],"Mbeya":["Iyunga","Mwanjelwa"],"Zanzibar":["Stone Town","Mazizini"]};
+const NET=[["mpesa","Vodacom M-Pesa","*150*00#"],["airtel","Airtel Money","*150*60#"],["mixx","Mixx by Yas","*150*01#"],["halo","HaloPesa","*150*88#"]],NN=Object.fromEntries(NET.map(n=>[n[0],n[1]]));
+const ST=["Booked","Cleaner assigned","Items picked up","Cleaning in progress","Out for delivery","Completed"],FEE=3000,SLOTS=["Morning 8am to 12pm","Afternoon 12pm to 4pm","Evening 4pm to 7pm"];
+const $=s=>document.querySelector(s),T=n=>"TZS "+(+n||0).toLocaleString("en-US"),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),rid=p=>p+Math.random().toString(36).slice(2,8);
+let db,sample,adm=false,R="cust",D={orders:[],riders:[],notes:[],services:[],ailogs:[]},V={t:"home",a:"orders",f:"all"},B={},AM="login",NW="mpesa",CH=[],RS=null;
+let L={users:[],me:null};try{Object.assign(L,JSON.parse(localStorage.getItem("pcs")||"{}"))}catch(e){}
+const sv=()=>{try{localStorage.setItem("pcs",JSON.stringify(L))}catch(e){}},U=()=>L.users.find(u=>u.id==L.me);
+const pp=id=>D.services.find(x=>x.id==id)?.p??SV.find(x=>x.id==id).p;
+function toast(t){const e=document.createElement("div");e.className="toast";e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2000)}
+const sheet=h=>$("#ov").innerHTML=`<div class="ov" onclick="if(event.target==this)closeS()"><div class="sheet">${h}</div></div>`,closeS=()=>$("#ov").innerHTML="";
+const W=async(c,id,d,m)=>{try{await db.collection(c).doc(id)[m||"set"](d);return true}catch(e){toast("Not saved. You need write access.");return false}};
+const phone=v=>{const m=(v||"").replace(/[\s-]/g,"").match(/^(?:\+?255|0)([67]\d{8})$/);return m?"+255"+m[1]:null};
+const note=(o,t)=>W("notes",rid("n"),{cid:o.cid,oid:o.id,text:t,at:Date.now()});
+async function init(){
+ try{const u=await claude.use("user");adm=u?await u.canEdit():false}catch(e){}
+ try{db=await claude.use("db");sample=await claude.use("sample")}catch(e){}
+ const h=location.hash;R=h=="#rider"?"rider":adm&&h!="#app"?"admin":"cust";document.body.className=R=="admin"?"w":"";
+ if(!db){$("#app").innerHTML=`<div class="empty"><h2>Sign in to claude.ai to open this app</h2></div>`;return}
+ Object.keys(D).forEach(c=>db.collection(c).onSnapshot(s=>{D[c]=s.docs.map(d=>({id:d.id,...d.data()}));if(!$("#ov").innerHTML||R!="cust")render()},()=>{}));render()}
+function render(){R=="admin"?admin():R=="rider"?rider():cust()}
+/* ---------- customer ---------- */
+function cust(){const u=U(),my=D.orders.filter(o=>u&&o.cid==u.id).sort((a,b)=>b.at-a.at),nt=D.notes.filter(n=>u&&n.cid==u.id).sort((a,b)=>b.at-a.at);let b="";
+ if(V.t=="home"){const rem=SV.map(s=>{const o=my.filter(o=>o.sv==s.id&&o.st==5).sort((a,b)=>b.doneAt-a.doneAt)[0];if(!o)return"";const d=Math.floor((Date.now()-(o.doneAt||o.at))/864e5);return d>=s.f?`<div class="card rm"><b>Time for your next ${s.n.toLowerCase()}?</b><div class="mute">It has been ${d} days since your last one. We suggest every ${s.f==14?"2 weeks":"3 months"}.</div><button class="btn s g" style="margin-top:8px" onclick="book('${s.id}')">Book again</button></div>`:""}).join("");
+  b=`<div class="hero"><h2>Fresh clothes, carpets and homes. Picked up and delivered.</h2><p>Serving Dar es Salaam, Dodoma, Arusha, Mwanza, Mbeya and Zanzibar. Pay by mobile money.</p><button class="btn" onclick="book('wash')">Book a cleaning</button></div><div class="sec">${rem}<h3 style="margin:6px 0 10px">Our services</h3><div class="sv">${SV.map(s=>`<button onclick="book('${s.id}')"><i>${s.e}</i><b>${s.n}</b><small>${s.d}</small><div class="pr">${T(pp(s.id))} per ${s.u}</div></button>`).join("")}</div><p class="mute" style="margin-top:12px">Pickup and delivery: ${T(FEE)} per order.</p></div>`}
+ if(V.t=="orders")b=!u?need("see your orders"):`<div class="sec"><h2 style="margin:8px 0">My orders</h2>${my.length?my.map(o=>`<div class="card"><div class="row"><b>${esc(o.id)}</b><span class="pill ${o.payStatus=="confirmed"?"ok":o.payStatus=="failed"?"bd":"wn"}">${o.payStatus=="confirmed"?"Paid":o.payStatus=="failed"?"Payment failed":"Checking payment"}</span></div><div>${esc(o.svn)} × ${o.qty} · ${T(o.total)}</div><div class="mute">${esc(o.date)}, ${esc(o.slot)} · ${esc(o.zone)}, ${esc(o.region)}</div><div style="margin-top:10px">${ST.map((s,i)=>`<div class="st ${i<=o.st?"d":""}"><i class="dot"></i><span>${s}</span></div>`).join("")}</div>${o.riderId?(r=>r?`<div class="mute">Rider: ${esc(r.name)} · <a href="tel:${esc(r.phone)}" style="color:var(--blue)">${esc(r.phone)}</a></div>`:"")(D.riders.find(r=>r.id==o.riderId)):""}</div>`).join(""):`<div class="empty">No orders yet. Book your first cleaning.</div>`}</div>`;
+ if(V.t=="alerts")b=!u?need("see alerts"):`<div class="sec"><h2 style="margin:8px 0">Alerts</h2><p class="mute">Each update is also sent by SMS to your phone.</p>${nt.length?nt.map(n=>`<div class="card"><div>🔔 ${esc(n.text)}</div><small class="mute">${esc(n.oid||"")} · ${new Date(n.at).toLocaleString("en-GB",{dateStyle:"medium",timeStyle:"short"})}</small></div>`).join(""):`<div class="empty">No alerts yet.</div>`}</div>`;
+ if(V.t=="acct")b=!u?need("manage your account"):`<div class="sec"><h2>${esc(u.name)}</h2><p class="mute" style="margin:4px 0 14px">${esc(u.id)}</p><button class="btn o" onclick="L.me=null;sv();V.t='home';render()">Log out</button><p class="mute" style="margin-top:14px;font-size:12px">Demo: login details stay on this device. A live version needs a secure server and SMS verification.</p></div>`;
+ $("#app").innerHTML=`<header><div class="logo hd">Pure <b>Cleaning</b> Services</div>${u?`<span class="mute">Hi, ${esc(u.name.split(" ")[0])}</span>`:`<button class="btn s" onclick="AM='login';authS()">Log in</button>`}</header>${b}<button class="fab" onclick="chat()">💬 Ask Pure AI</button><nav>${[["home","🏠","Home"],["orders","📋","Orders"],["alerts","🔔","Alerts"],["acct","👤","Account"]].map(([k,i,l])=>`<button class="${V.t==k?"on":""}" onclick="V.t='${k}';render();scrollTo(0,0)"><span>${i}</span>${l}</button>`).join("")}</nav>`}
+const need=w=>`<div class="empty"><p>Log in to ${w}.</p><button class="btn" style="margin-top:12px" onclick="AM='login';authS()">Log in or sign up</button></div>`;
+function authS(){sheet(`<h2>Welcome</h2><div class="tabs" style="padding:8px 0"><button class="${AM=="login"?"on":""}" onclick="AM='login';authS()">Log in</button><button class="${AM=="signup"?"on":""}" onclick="AM='signup';authS()">Sign up</button></div>${AM=="signup"?`<label>Full name</label><input id="an">`:""}<label>Phone (+255…) or email</label><input id="ai" placeholder="+255 7XX XXX XXX"><label>Password (6+ characters)</label><input id="ap" type="password"><div class="err" id="ae"></div><button class="btn f" onclick="auth()">${AM=="login"?"Log in":"Create account"}</button>`)}
+function auth(){const raw=$("#ai").value.trim(),pw=$("#ap").value,E=m=>$("#ae").textContent=m,ph=phone(raw),em=/^\S+@\S+\.\S+$/.test(raw)?raw.toLowerCase():null,id=ph||em;
+ if(!id)return E("Enter a valid Tanzanian phone (0712 345 678) or an email.");if(pw.length<6)return E("Password needs 6 or more characters.");
+ const h=btoa(unescape(encodeURIComponent(pw))),u=L.users.find(u=>u.id==id);
+ if(AM=="signup"){const n=$("#an").value.trim();if(!n)return E("Enter your name.");if(u)return E("This account exists. Log in instead.");L.users.push({id,name:n,pw:h,phone:ph||""});L.me=id}else{if(!u||u.pw!=h)return E("Wrong phone/email or password.");L.me=id}
+ sv();closeS();render()}
+function book(id){B={sv:id||"wash",qty:1,region:"Dar es Salaam",zone:"",addr:"",date:new Date(Date.now()+864e5-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10),slot:SLOTS[0],...B,sv:id||B.sv};bookS()}
+function rdB(){if(!$("#bq"))return;B.qty=+$("#bq").value;B.addr=$("#ba").value;B.date=$("#bd").value;B.slot=$("#bt").value;B.region=$("#br").value;B.zone=$("#bz")?.value||B.zone}
+const tot=()=>B.qty*pp(B.sv)+FEE;
+function bookS(){rdB();const s=SV.find(x=>x.id==B.sv),z=REG[B.region];if(!z.includes(B.zone))B.zone=z[0];
+ sheet(`<h2>Book a cleaning</h2><label>Service</label><select onchange="rdB();B.sv=this.value;bookS()">${SV.map(x=>`<option value="${x.id}" ${x.id==B.sv?"selected":""}>${x.n}</option>`).join("")}</select><label>How many ${s.u}s? (${T(pp(s.id))} each)</label><input id="bq" type="number" min="1" max="500" value="${B.qty}" oninput="rdB();$('#tt').textContent=T(tot())"><label>Region</label><select id="br" onchange="rdB();B.zone='';bookS()">${Object.keys(REG).map(r=>`<option ${r==B.region?"selected":""}>${r}</option>`).join("")}</select><label>Neighbourhood</label><select id="bz">${z.map(x=>`<option ${x==B.zone?"selected":""}>${x}</option>`).join("")}</select><label>Street or landmark</label><input id="ba" value="${esc(B.addr)}" placeholder="House number, street, near…"><label>Pickup date</label><input id="bd" type="date" value="${B.date}"><label>Pickup time</label><select id="bt">${SLOTS.map(x=>`<option value="${x}" ${x==B.slot?"selected":""}>${x}</option>`).join("")}</select><div class="row" style="margin:14px 0 4px"><span class="mute">Includes ${T(FEE)} pickup and delivery</span><b id="tt" style="font-size:20px;color:var(--em)">${T(tot())}</b></div><div class="err" id="be"></div><button class="btn f" onclick="toPay()">Continue to payment</button>`)}
+function toPay(){rdB();if(!(B.qty>=1))return $("#be").textContent="Enter a quantity of 1 or more.";if(B.addr.trim().length<3)return $("#be").textContent="Enter your street or landmark.";if(!B.date||B.date<new Date().toISOString().slice(0,10))return $("#be").textContent="Pick a date from today onward.";
+ if(!U())return authS();const u=U();
+ sheet(`<h2>Pay with mobile money</h2><div class="net" style="margin-top:10px">${NET.map(n=>`<button class="${NW==n[0]?"on":""}" onclick="NW='${n[0]}';[...this.parentNode.children].forEach(b=>b.classList.toggle('on',b==this))">${n[1]}<small class="mute" style="display:block">${n[2]}</small></button>`).join("")}</div><label>Mobile money number</label><input id="mp" value="${u.phone}" inputmode="tel" placeholder="+255 7XX XXX XXX"><div class="row" style="margin:14px 0"><b>Total</b><b style="color:var(--em);font-size:20px">${T(tot())}</b></div><div class="err" id="be"></div><button class="btn f" onclick="stk()">Pay now</button><button class="btn o f" style="margin-top:8px" onclick="bookS()">Back</button>`)}
+function stk(){const m=phone($("#mp").value);if(!m)return $("#be").textContent="Enter a valid mobile money number.";const n=NET.find(x=>x[0]==NW);
+ sheet(`<h2>Approve on your phone</h2><div class="card" style="margin-top:10px"><p>A payment request of <b>${T(tot())}</b> was sent to <b>${m}</b> on ${n[1]}.</p><ol class="mute" style="margin:8px 0 0 18px"><li>Check your phone for the prompt.</li><li>Enter your PIN.</li><li>Return here and confirm.</li></ol><p class="mute" style="margin-top:8px">No prompt? Dial <b>${n[2]}</b> and pay business number <b>PURE-0042</b>.</p></div><button class="btn g f" id="cf" onclick="place('${m}')">I have approved the payment</button><p class="mute" style="font-size:12px;margin-top:10px">Demo mode: no money moves. A live version uses a gateway such as Selcom, AzamPay or ClickPesa with a callback webhook.</p>`)}
+async function place(m){const b=$("#cf");b.disabled=true;b.textContent="Confirming…";const u=U(),s=SV.find(x=>x.id==B.sv),id="PCS"+Math.floor(1e5+Math.random()*9e5);
+ await new Promise(r=>setTimeout(r,1500));const o={id,cid:u.id,name:u.name,phone:m,sv:s.id,svn:s.n,qty:B.qty,total:tot(),region:B.region,zone:B.zone,addr:B.addr.trim(),date:B.date,slot:B.slot,net:NW,payRef:"TXN"+Math.floor(1e7+Math.random()*9e7),payStatus:"pending",st:0,riderId:"",at:Date.now()};
+ if(await W("orders",id,o)){await note(o,`${id}: Order received. We are checking your payment.`);closeS();V.t="orders";B={};render();toast("Order placed")}else{b.disabled=false;b.textContent="Try again"}}
+async function chat(){if(!CH.length)CH=[{r:"ai",t:"Habari! I’m Pure AI. Ask me about prices, booking, pickup times or your order status. A human agent will follow up during office hours."}];chatS()}
+function chatS(){sheet(`<h2>Pure AI assistant</h2><p class="mute">Available 24/7. For payments disputes, our team replies in office hours.</p><div class="chat" id="ch">${CH.map(m=>`<div class="msg ${m.r=="me"?"me":"ai"}">${esc(m.t)}</div>`).join("")}</div><div class="row" style="margin:6px 0">${["Prices","Track my order","How does pickup work?"].map(q=>`<button class="btn o s" onclick="ask('${q}')">${q}</button>`).join("")}</div><div class="row" style="flex-wrap:nowrap"><input id="cq" placeholder="Type your question" onkeydown="if(event.key=='Enter')ask()"><button class="btn" onclick="ask()">Send</button></div>`);const c=$("#ch");c.scrollTop=c.scrollHeight}
+async function ask(q){q=q||$("#cq").value.trim();if(!q)return;CH.push({r:"me",t:q});CH.push({r:"ai",t:"Thinking…"});chatS();const u=U(),my=D.orders.filter(o=>u&&o.cid==u.id).slice(0,5).map(o=>`${o.id}: ${o.svn}, status ${ST[o.st]}, payment ${o.payStatus}, pickup ${o.date} ${o.slot}`).join("\n")||"none (customer may be logged out)";let a;
+ const P=`You are Pure AI, the assistant for Pure Cleaning Services in Tanzania. Be warm, brief (under 90 words), plain English or Kiswahili to match the customer.${LANG=="sw"?" The app is set to Kiswahili, so reply in Kiswahili unless the customer writes in English.":""} Facts: services and prices: ${SV.map(s=>`${s.n} ${T(pp(s.id))} per ${s.u}`).join("; ")}. Pickup and delivery fee ${T(FEE)} per order. Regions: ${Object.entries(REG).map(([r,z])=>r+" ("+z.join(", ")+")").join("; ")}. Payment: Vodacom M-Pesa, Airtel Money, Mixx by Yas, HaloPesa. Order stages: ${ST.join(", ")}. Reminders: laundry every 2 weeks, carpets and deep cleaning every 3 months. Human admin office hours 8am to 6pm; outside those hours you handle FAQs, booking guidance, pricing and tracking. Never invent prices, discounts or times. For refunds, complaints or payment problems, take their order number and say the team will follow up. Customer orders:\n${my}\n\nConversation:\n${CH.slice(0,-2).map(m=>(m.r=="me"?"Customer: ":"Assistant: ")+m.t).join("\n")}\nCustomer: ${q}\nAssistant:`;
+ try{if(!sample)throw 0;a=(await sample(P)).text.trim()}catch(e){a=/price|bei|cost/i.test(q)?SV.map(s=>`${s.n}: ${T(pp(s.id))} per ${s.u}`).join("\n")+`\nPickup and delivery: ${T(FEE)}.`:/track|status|order/i.test(q)?"Open the Orders tab to see each stage of your order, from Booked to Completed.":/pick|deliver/i.test(q)?"Choose a date and time when you book. A rider collects your items, and we deliver them back clean.":"I can help with prices, booking and tracking. For anything else, our team will reply in office hours."}
+ CH[CH.length-1]={r:"ai",t:a};W("ailogs",rid("a"),{cid:u?.id||"guest",name:u?.name||"Guest",q,a,at:Date.now()});chatS()}
+/* ---------- admin ---------- */
+function admin(){const t=V.a,tb=[["orders","Orders"],["riders","Riders and zones"],["prices","Prices"],["rem","Reminders"],["ai","AI logs"]];
+ $("#app").innerHTML=`<header><div class="logo hd">Pure <b>Cleaning</b> · Admin</div><span><a href="#app" class="mute" onclick="setTimeout(()=>location.reload(),0)">Customer app</a> · <a href="#rider" class="mute" onclick="setTimeout(()=>location.reload(),0)">Rider portal</a></span></header><div class="tabs">${tb.map(([k,l])=>`<button class="${t==k?"on":""}" onclick="V.a='${k}';admin()">${l}</button>`).join("")}</div><div class="sec">${({orders:aOrders,riders:aRiders,prices:aPrices,rem:aRem,ai:aAi})[t]()}</div>`}
+function aOrders(){const ok=D.orders.filter(o=>o.payStatus=="confirmed");let L2=[...D.orders].sort((a,b)=>b.at-a.at);if(V.f=="pay")L2=L2.filter(o=>o.payStatus=="pending");else if(V.f=="open")L2=L2.filter(o=>o.st<5);
+ return `<div class="stats">${[["Confirmed revenue",T(ok.reduce((a,o)=>a+o.total,0))],["All orders",D.orders.length],["Open orders",D.orders.filter(o=>o.st<5).length],["Payments to verify",D.orders.filter(o=>o.payStatus=="pending").length]].map(([a,b])=>`<div class="card"><span class="mute">${a}</span><b>${b}</b></div>`).join("")}</div><div class="tabs" style="padding:0 0 10px">${[["all","All"],["pay","Verify payment"],["open","Open"]].map(([k,l])=>`<button class="${V.f==k?"on":""}" onclick="V.f='${k}';admin()">${l}</button>`).join("")}</div>${L2.length?L2.map(o=>{const rs=D.riders.filter(r=>r.active),m=rs.filter(r=>(r.zones||"").toLowerCase().split(",").map(z=>z.trim()).includes((o.zone||"").toLowerCase())),x=rs.filter(r=>!m.includes(r)),op=r=>`<option value="${r.id}" ${r.id==o.riderId?"selected":""}>${esc(r.name)}</option>`;
+ return `<div class="card"><div class="row"><b>${esc(o.id)}</b><span class="pill ${o.payStatus=="confirmed"?"ok":o.payStatus=="failed"?"bd":"wn"}">${o.payStatus=="confirmed"?"Payment confirmed":o.payStatus=="failed"?"Payment failed":"Verify payment"}</span></div><div>${esc(o.name)} · <a href="tel:${esc(o.phone)}" style="color:var(--blue)">${esc(o.phone)}</a></div><div>${esc(o.svn)} × ${o.qty} · <b>${T(o.total)}</b></div><div class="mute">${esc(o.date)}, ${esc(o.slot)} · ${esc(o.addr)}, ${esc(o.zone)}, ${esc(o.region)}</div><div class="mute" style="margin-bottom:8px">${NN[o.net]||esc(o.net)} · Ref ${esc(o.payRef)}</div><div class="row">${o.payStatus=="pending"?`<span><button class="btn s g" onclick="payv('${o.id}','confirmed')">Confirm payment</button> <button class="btn s r" onclick="payv('${o.id}','failed')">Mark failed</button></span>`:"<span></span>"}<span class="row"><select style="width:auto" onchange="asg('${o.id}',this.value)"><option value="">Assign rider…</option>${m.length?`<optgroup label="Works in ${esc(o.zone)}">${m.map(op).join("")}</optgroup>`:""}${x.length?`<optgroup label="Other zones">${x.map(op).join("")}</optgroup>`:""}</select><select style="width:auto" onchange="stt('${o.id}',+this.value)">${ST.map((s,i)=>`<option value="${i}" ${i==o.st?"selected":""}>${s}</option>`).join("")}</select></span></div></div>`}).join(""):`<div class="empty">No orders here yet.</div>`}`}
+const payv=(id,s)=>{const o=D.orders.find(o=>o.id==id);W("orders",id,{payStatus:s},"update");note(o,`${id}: ${s=="confirmed"?"Payment confirmed. Thank you!":"Payment could not be confirmed. Please contact us or pay again."}`);toast("SMS and alert sent")};
+function asg(id,r){const o=D.orders.find(o=>o.id==id);if(r&&o.payStatus!="confirmed"){toast("Confirm payment first");return admin()}W("orders",id,{riderId:r,...(r&&o.st==0?{st:1}:{})},"update");if(r){note(o,`${id}: ${ST[1]}. ${D.riders.find(x=>x.id==r).name} will collect your items.`);toast("Rider assigned, customer notified")}}
+function stt(id,s){const o=D.orders.find(o=>o.id==id);if(s>=1&&(o.payStatus!="confirmed"||!o.riderId)){toast("Confirm payment and assign a rider first");return admin()}W("orders",id,{st:s,...(s==5?{doneAt:Date.now()}:{})},"update");note(o,`${id}: ${ST[s]}.`);toast("SMS and alert sent")}
+function aRiders(){return `<div class="row" style="margin-bottom:10px"><h2>Bodaboda riders (${D.riders.length})</h2><button class="btn" onclick="rf()">Add rider</button></div>${D.riders.length?D.riders.map(r=>`<div class="card"><div class="row"><b>${esc(r.name)}</b><span class="pill ${r.active?"ok":"wn"}">${r.active?"Active":"Off duty"}</span></div><div class="mute">${esc(r.phone)} · ${esc(r.region)} · PIN ${esc(r.pin)}</div><div>Zones: <b>${esc(r.zones)}</b></div><div style="margin:6px 0">${D.orders.filter(o=>o.riderId==r.id&&o.st<5).length} open tasks</div><button class="btn o s" onclick="W('riders','${r.id}',{active:${!r.active}},'update')">${r.active?"Set off duty":"Set active"}</button> <button class="btn r s" onclick="if(confirm('Remove this rider?'))W('riders','${r.id}',0,'delete')">Remove</button></div>`).join(""):`<div class="empty"><p>No riders yet.</p><button class="btn o s" style="margin-top:8px" onclick="demoR()">Add 2 sample riders</button></div>`}<p class="mute">Riders open this link with #rider at the end and log in with phone and PIN.</p>`}
+function demoR(){W("riders",rid("r"),{name:"Juma Mrisho",phone:"+255754000111",pin:"1234",region:"Dar es Salaam",zones:"Kinondoni, Mikocheni",active:true});W("riders",rid("r"),{name:"Said Omari",phone:"+255713000222",pin:"4321",region:"Dar es Salaam",zones:"Chang'ombe, Temeke",active:true})}
+function rf(){sheet(`<h2>New rider</h2><label>Full name</label><input id="rn"><label>Phone (+255…)</label><input id="rp"><label>Region</label><select id="rr">${Object.keys(REG).map(r=>`<option>${r}</option>`).join("")}</select><label>Zones (comma separated, e.g. Kinondoni, Chang'ombe)</label><input id="rz"><label>Login PIN (4 digits)</label><input id="rx" maxlength="4" inputmode="numeric"><div class="err" id="re"></div><div class="row"><button class="btn o" onclick="closeS()">Cancel</button><button class="btn" onclick="rs()">Save rider</button></div>`)}
+async function rs(){const p=phone($("#rp").value),n=$("#rn").value.trim(),z=$("#rz").value.trim(),x=$("#rx").value;if(!n||!p||!z||!/^\d{4}$/.test(x))return $("#re").textContent="Enter name, valid phone, at least one zone and a 4-digit PIN.";if(await W("riders",rid("r"),{name:n,phone:p,pin:x,region:$("#rr").value,zones:z,active:true})){closeS();toast("Rider added")}}
+function aPrices(){return `<h2 style="margin-bottom:10px">Service prices</h2>${SV.map(s=>`<div class="card row"><span>${s.e} ${s.n}<br><small class="mute">TZS per ${s.u}</small></span><span class="row" style="flex-wrap:nowrap"><input type="number" min="0" id="pr_${s.id}" value="${pp(s.id)}" style="width:110px"><button class="btn s" onclick="savep('${s.id}')">Save</button></span></div>`).join("")}`}
+const savep=async id=>{const v=+$("#pr_"+id).value;if(!(v>0))return toast("Enter a price above 0");if(await W("services",id,{p:v}))toast("Price updated")};
+function remList(){const out=[],by={};D.orders.filter(o=>o.st==5).forEach(o=>{const k=o.cid+o.sv;if(!by[k]||(by[k].doneAt||by[k].at)<(o.doneAt||o.at))by[k]=o});Object.values(by).forEach(o=>{const s=SV.find(x=>x.id==o.sv),d=Math.floor((Date.now()-(o.doneAt||o.at))/864e5);if(d>=s.f)out.push({o,s,d})});return out}
+function aRem(){const r=remList();return `<h2 style="margin-bottom:6px">Customers due for a reminder</h2><p class="mute" style="margin-bottom:10px">Laundry after 2 weeks. Carpets and deep cleaning after 3 months, counted from the last completed order.</p>${r.length?r.map(({o,s,d})=>`<div class="card row"><span><b>${esc(o.name)}</b> · ${esc(o.phone)}<br><small class="mute">${s.n}, ${d} days ago</small></span><button class="btn s g" onclick="sendR('${o.id}')">Send reminder</button></div>`).join(""):`<div class="empty">No reminders due yet.</div>`}`}
+function sendR(id){const o=D.orders.find(o=>o.id==id),s=SV.find(x=>x.id==o.sv);note(o,`It’s time for your next ${s.n.toLowerCase()}. Book again in the app.`);toast("Reminder sent by alert and SMS")}
+function aAi(){const l=[...D.ailogs].sort((a,b)=>b.at-a.at).slice(0,60);return `<h2 style="margin-bottom:10px">AI assistant logs</h2>${l.length?l.map(x=>`<div class="card"><b>${esc(x.name)}</b> <small class="mute">${new Date(x.at).toLocaleString("en-GB",{dateStyle:"medium",timeStyle:"short"})}</small><div style="margin:4px 0">Q: ${esc(x.q)}</div><div class="mute">A: ${esc(x.a)}</div></div>`).join(""):`<div class="empty">No conversations yet.</div>`}`}
+/* ---------- rider ---------- */
+function rider(){const me=D.riders.find(r=>r.id==RS);
+ if(!me)return $("#app").innerHTML=`<header><div class="logo hd">Pure <b>Cleaning</b> · Rider</div></header><div class="sec"><h2 style="margin:10px 0">Rider login</h2><label>Phone</label><input id="lp" inputmode="tel" placeholder="+255 7XX XXX XXX"><label>PIN</label><input id="lx" type="password" inputmode="numeric" maxlength="4"><div class="err" id="le"></div><button class="btn f" onclick="rlog()">Log in</button></div>`;
+ const T1=D.orders.filter(o=>o.riderId==me.id&&(o.st==1||o.st==4)).sort((a,b)=>(a.date+a.slot).localeCompare(b.date+b.slot));
+ $("#app").innerHTML=`<header><div class="logo hd">Hi, ${esc(me.name.split(" ")[0])}</div><button class="btn o s" onclick="RS=null;rider()">Log out</button></header><div class="sec"><p class="mute" style="margin:8px 0">Your zones: ${esc(me.zones)} · ${T1.length} tasks · ${D.orders.filter(o=>o.riderId==me.id&&o.st==5).length} completed</p>${T1.length?T1.map(o=>{const p=o.st==1;return `<div class="card"><div class="row"><b>${esc(o.id)}</b><span class="pill ${p?"wn":"ok"}">${p?"Pickup":"Dropoff"}</span></div><div style="font-size:17px;margin:6px 0"><b>${esc(o.zone)}</b>, ${esc(o.region)}<br>${esc(o.addr)}</div><div>${esc(o.name)} · <a href="tel:${esc(o.phone)}" style="color:var(--blue)">Call ${esc(o.phone)}</a></div><div class="mute">${esc(o.svn)} × ${o.qty} · ${esc(o.date)}, ${esc(o.slot)}</div><a class="btn o s" style="display:inline-block;margin:8px 0;text-decoration:none" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.addr+", "+o.zone+", "+o.region+", Tanzania")}">Open route in Maps</a><button class="btn g f" onclick="rdo('${o.id}',${p?2:5})">${p?"Mark items picked up":"Mark delivered"}</button></div>`}).join(""):`<div class="empty">No tasks right now. New pickups and dropoffs appear here.</div>`}</div>`}
+function rlog(){const p=phone($("#lp").value),r=p&&D.riders.find(r=>r.phone==p&&r.pin==$("#lx").value);if(!r)return $("#le").textContent="Wrong phone or PIN.";RS=r.id;rider()}
+function rdo(id,s){const o=D.orders.find(o=>o.id==id);W("orders",id,{st:s,...(s==5?{doneAt:Date.now()}:{})},"update");note(o,`${id}: ${ST[s]}.`);toast("Customer notified")}
+/* ---------- Kiswahili ---------- */
+let LANG="sw";try{LANG=localStorage.getItem("pcl")||"sw"}catch(e){}
+const RAW=`Loading Pure Cleaning Services…|Inapakia Pure Cleaning Services…
+Sign in to claude.ai to open this app|Ingia kwenye claude.ai ili kufungua programu hii
+Log in|Ingia
+Sign up|Jisajili
+Log out|Toka
+Log in or sign up|Ingia au jisajili
+Fresh clothes, carpets and homes. Picked up and delivered.|Nguo, mazulia na nyumba safi. Tunachukua na kukuletea.
+Serving Dar es Salaam, Dodoma, Arusha, Mwanza, Mbeya and Zanzibar. Pay by mobile money.|Tunahudumia Dar es Salaam, Dodoma, Arusha, Mwanza, Mbeya na Zanzibar. Lipa kwa pesa ya simu.
+Book a cleaning|Weka oda ya usafi
+Our services|Huduma zetu
+Washed, dried and folded. Priced per clothing item.|Tunafua, kukausha na kukunja. Bei kwa kila kipande cha nguo.
+Suits, kaunda sets, dresses and delicate fabrics.|Suti, kaunda, magauni na vitambaa laini.
+Deep shampoo and extraction. Priced per square metre.|Kusafisha kwa kina kwa shampoo. Bei kwa mita ya mraba.
+Floors, kitchen, bathrooms and windows. Priced per room.|Sakafu, jiko, bafu na madirisha. Bei kwa kila chumba.
+Book again|Weka oda tena
+Home|Mwanzo
+Orders|Oda
+Alerts|Arifa
+Account|Akaunti
+💬 Ask Pure AI|💬 Uliza Pure AI
+My orders|Oda zangu
+Paid|Imelipwa
+Payment failed|Malipo yameshindwa
+Checking payment|Tunakagua malipo
+No orders yet. Book your first cleaning.|Bado hakuna oda. Weka oda yako ya kwanza.
+Log in to see your orders.|Ingia ili uone oda zako.
+Log in to see alerts.|Ingia ili uone arifa.
+Log in to manage your account.|Ingia ili usimamie akaunti yako.
+Each update is also sent by SMS to your phone.|Kila taarifa pia hutumwa kwa SMS kwenye simu yako.
+No alerts yet.|Bado hakuna arifa.
+Demo: login details stay on this device. A live version needs a secure server and SMS verification.|Majaribio: taarifa za kuingia zinabaki kwenye kifaa hiki. Toleo halisi linahitaji seva salama na uthibitisho kwa SMS.
+Welcome|Karibu
+Full name|Jina kamili
+Phone (+255…) or email|Simu (+255…) au barua pepe
+Password (6+ characters)|Nenosiri (herufi 6 au zaidi)
+Create account|Fungua akaunti
+Enter a valid Tanzanian phone (0712 345 678) or an email.|Weka namba sahihi ya simu ya Tanzania (0712 345 678) au barua pepe.
+Password needs 6 or more characters.|Nenosiri liwe na herufi 6 au zaidi.
+Enter your name.|Weka jina lako.
+This account exists. Log in instead.|Akaunti hii ipo. Ingia badala yake.
+Wrong phone/email or password.|Simu/barua pepe au nenosiri si sahihi.
+Service|Huduma
+Region|Mkoa
+Neighbourhood|Eneo
+Street or landmark|Barabara au alama ya karibu
+Pickup date|Tarehe ya kuchukua
+Pickup time|Muda wa kuchukua
+Continue to payment|Endelea kulipa
+Enter a quantity of 1 or more.|Weka idadi ya 1 au zaidi.
+Enter your street or landmark.|Weka barabara au alama ya karibu.
+Pick a date from today onward.|Chagua tarehe kuanzia leo.
+Morning 8am to 12pm|Asubuhi saa 2 hadi saa 6
+Afternoon 12pm to 4pm|Mchana saa 6 hadi saa 10
+Evening 4pm to 7pm|Jioni saa 10 hadi saa 1 usiku
+House number, street, near…|Namba ya nyumba, barabara, karibu na…
+Type your question|Andika swali lako
+Pay with mobile money|Lipa kwa pesa ya simu
+Mobile money number|Namba ya pesa ya simu
+Total|Jumla
+Pay now|Lipa sasa
+Back|Rudi
+Enter a valid mobile money number.|Weka namba sahihi ya pesa ya simu.
+Approve on your phone|Thibitisha kwenye simu yako
+A payment request of|Ombi la malipo la
+was sent to|limetumwa kwa
+Check your phone for the prompt.|Angalia ujumbe wa malipo kwenye simu yako.
+Enter your PIN.|Weka PIN yako.
+Return here and confirm.|Rudi hapa na uthibitishe.
+No prompt? Dial|Hujapata ujumbe? Piga
+and pay business number|na ulipe namba ya biashara
+I have approved the payment|Nimeidhinisha malipo
+Confirming…|Inathibitisha…
+Try again|Jaribu tena
+Demo mode: no money moves. A live version uses a gateway such as Selcom, AzamPay or ClickPesa with a callback webhook.|Hali ya majaribio: hakuna pesa inayohamishwa. Toleo halisi hutumia lango la malipo kama Selcom, AzamPay au ClickPesa.
+Order placed|Oda imewekwa
+Not saved. You need write access.|Haikuhifadhiwa. Huna ruhusa ya kuandika.
+Pure AI assistant|Msaidizi Pure AI
+Available 24/7. For payments disputes, our team replies in office hours.|Anapatikana saa 24. Kwa matatizo ya malipo, timu yetu hujibu saa za kazi.
+Habari! I’m Pure AI. Ask me about prices, booking, pickup times or your order status. A human agent will follow up during office hours.|Habari! Mimi ni Pure AI. Niulize kuhusu bei, kuweka oda, muda wa kuchukua au hali ya oda yako. Mhudumu wetu atafuatilia saa za kazi.
+Thinking…|Anafikiri…
+Prices|Bei
+Track my order|Fuatilia oda yangu
+How does pickup work?|Kuchukua nguo hufanyaje?
+Send|Tuma
+Open the Orders tab to see each stage of your order, from Booked to Completed.|Fungua kichupo cha Oda kuona hatua zote za oda yako, kuanzia Imepokelewa hadi Imekamilika.
+Choose a date and time when you book. A rider collects your items, and we deliver them back clean.|Chagua tarehe na muda unapoweka oda. Msafirishaji atachukua vitu vyako, na tutavirudisha vikiwa safi.
+I can help with prices, booking and tracking. For anything else, our team will reply in office hours.|Naweza kusaidia kuhusu bei, kuweka oda na kufuatilia. Kwa mengine, timu yetu itajibu saa za kazi.
+· Admin|· Msimamizi
+· Rider|· Msafirishaji
+Customer app|Programu ya mteja
+Rider portal|Tovuti ya msafirishaji
+Riders and zones|Wasafirishaji na maeneo
+Reminders|Vikumbusho
+AI logs|Kumbukumbu za AI
+Confirmed revenue|Mapato yaliyothibitishwa
+All orders|Oda zote
+Open orders|Oda zinazoendelea
+Payments to verify|Malipo ya kuthibitisha
+All|Zote
+Open|Zinazoendelea
+Verify payment|Thibitisha malipo
+Payment confirmed|Malipo yamethibitishwa
+Confirm payment|Thibitisha malipo
+Mark failed|Weka imeshindwa
+Assign rider…|Mpangie msafirishaji…
+Other zones|Maeneo mengine
+No orders here yet.|Bado hakuna oda hapa.
+Confirm payment first|Thibitisha malipo kwanza
+Confirm payment and assign a rider first|Thibitisha malipo na mpangie msafirishaji kwanza
+SMS and alert sent|SMS na arifa vimetumwa
+Rider assigned, customer notified|Msafirishaji amepangiwa, mteja amearifiwa
+Add rider|Ongeza msafirishaji
+Active|Yupo kazini
+Off duty|Hayupo kazini
+Set off duty|Weka hayupo kazini
+Set active|Weka yupo kazini
+Remove|Ondoa
+Remove this rider?|Ondoa msafirishaji huyu?
+No riders yet.|Bado hakuna wasafirishaji.
+Add 2 sample riders|Ongeza wasafirishaji 2 wa mfano
+Riders open this link with #rider at the end and log in with phone and PIN.|Wasafirishaji wafungue kiungo hiki kikiwa na #rider mwishoni, kisha waingie kwa simu na PIN.
+New rider|Msafirishaji mpya
+Phone (+255…)|Simu (+255…)
+Zones (comma separated, e.g. Kinondoni, Chang'ombe)|Maeneo (tenganisha kwa koma, mf. Kinondoni, Chang'ombe)
+Login PIN (4 digits)|PIN ya kuingia (tarakimu 4)
+Cancel|Ghairi
+Save rider|Hifadhi msafirishaji
+Enter name, valid phone, at least one zone and a 4-digit PIN.|Weka jina, simu sahihi, angalau eneo moja na PIN ya tarakimu 4.
+Rider added|Msafirishaji ameongezwa
+Service prices|Bei za huduma
+Save|Hifadhi
+Enter a price above 0|Weka bei kubwa kuliko 0
+Price updated|Bei imesasishwa
+Customers due for a reminder|Wateja wanaopaswa kukumbushwa
+Laundry after 2 weeks. Carpets and deep cleaning after 3 months, counted from the last completed order.|Nguo baada ya wiki 2. Mazulia na usafi wa kina baada ya miezi 3, kuanzia oda ya mwisho iliyokamilika.
+Send reminder|Tuma ukumbusho
+No reminders due yet.|Bado hakuna vikumbusho.
+Reminder sent by alert and SMS|Ukumbusho umetumwa kwa arifa na SMS
+AI assistant logs|Kumbukumbu za msaidizi wa AI
+No conversations yet.|Bado hakuna mazungumzo.
+Rider login|Kuingia kwa msafirishaji
+Phone|Simu
+Wrong phone or PIN.|Simu au PIN si sahihi.
+Pickup|Kuchukua
+Dropoff|Kupeleka
+Open route in Maps|Fungua njia kwenye Maps
+Mark items picked up|Weka vitu vimechukuliwa
+Mark delivered|Weka vimewasilishwa
+No tasks right now. New pickups and dropoffs appear here.|Hakuna kazi sasa. Kazi mpya zitaonekana hapa.
+Customer notified|Mteja amearifiwa`;
+const DICT=new Map(RAW.split("\n").map(l=>l.split("|")));
+const PH=[["Laundry, wash and fold","Kufua na kukunja nguo"],["laundry, wash and fold","kufua na kukunja nguo"],["Deep house cleaning","Usafi wa kina wa nyumba"],["deep house cleaning","usafi wa kina wa nyumba"],["Carpet cleaning","Kusafisha mazulia"],["carpet cleaning","kusafisha mazulia"],["Dry cleaning","Usafi wa kavu"],["dry cleaning","usafi wa kavu"],["Cleaning in progress","Usafi unaendelea"],["Cleaner assigned","Msafishaji amepangiwa"],["Items picked up","Vitu vimechukuliwa"],["Out for delivery","Njiani kuletwa"],["Completed","Imekamilika"],["Booked","Imepokelewa"],[" per item"," kwa kipande"],[" per m²"," kwa m²"],[" per room"," kwa chumba"],["Rider:","Msafirishaji:"],["Pickup and delivery:","Kuchukua na kuleta:"],["Order received. We are checking your payment.","Oda imepokelewa. Tunakagua malipo yako."],["Payment confirmed. Thank you!","Malipo yamethibitishwa. Asante!"],["Payment could not be confirmed. Please contact us or pay again.","Malipo hayakuthibitishwa. Tafadhali wasiliana nasi au lipa tena."],["will collect your items.","atachukua vitu vyako."]];
+const UN={item:"kipande","m²":"m²",room:"chumba"};
+const PT=[[/^Hi, (.+)$/,"Habari, $1"],[/^How many (items|m²s|rooms)\? \((.+) each\)$/,(m,u,p)=>`Idadi ya ${({items:"vipande","m²s":"m²",rooms:"vyumba"})[u]} (${p} kila kimoja)`],[/^Pickup and delivery: (.+) per order\.$/,"Kuchukua na kuleta: $1 kwa oda."],[/^Includes (.+) pickup and delivery$/,"Inajumuisha $1 kuchukua na kuleta"],[/^Time for your next (.+)\?$/,"Ni wakati wa $1 tena?"],[/^It has been (\d+) days since your last one\. We suggest every (2 weeks|3 months)\.$/,(m,d,w)=>`Imepita siku ${d} tangu mara ya mwisho. Tunapendekeza kila ${w=="2 weeks"?"wiki 2":"miezi 3"}.`],[/It’s time for your next (.+?)\. Book again in the app\./,"Ni wakati wa $1 tena. Weka oda kwenye programu."],[/^on (.+)\.$/,"kupitia $1."],[/^Works in (.+)$/,"Wanaofanya kazi $1"],[/^Bodaboda riders \((\d+)\)$/,"Wasafirishaji wa bodaboda ($1)"],[/^(\d+) open tasks$/,"Kazi $1 zinazoendelea"],[/^TZS per (.+)$/,(m,u)=>"TZS kwa "+(UN[u]||u)],[/^(.+), (\d+) days ago$/,"$1, siku $2 zilizopita"],[/^Your zones: (.+) · (\d+) tasks · (\d+) completed$/,"Maeneo yako: $1 · kazi $2 · zilizokamilika $3"],[/^Call (.+)$/,"Piga $1"]];
+function tr(s){const m=s.match(/^(\s*)([\s\S]*?)(\s*)$/),c=m[2];if(!c)return s;let r=DICT.get(c);if(r==null)for(const [re,f] of PT)if(re.test(c)){r=c.replace(re,f);break}if(r==null)r=c;for(const [a,b] of PH)if(r.includes(a))r=r.split(a).join(b);return m[1]+r+m[3]}
+function walk(n){if(n.nodeType==3){const v=tr(n.nodeValue);if(v!==n.nodeValue)n.nodeValue=v;return}if(n.nodeType!=1||/^(SCRIPT|STYLE|TEXTAREA)$/.test(n.tagName))return;for(const a of["placeholder","label","title"])if(n.hasAttribute(a)){const v=n.getAttribute(a),t=tr(v);if(t!==v)n.setAttribute(a,t)}n.childNodes.forEach(walk)}
+const MO=new MutationObserver(()=>{MO.disconnect();walk(document.body);MO.observe(document.body,{childList:true,subtree:true,characterData:true})});
+if(LANG=="sw"){const _t=Date.prototype.toLocaleString,_c=window.confirm;Date.prototype.toLocaleString=function(l,o){return _t.call(this,l=="en-GB"?"sw-TZ":l,o)};window.confirm=m=>_c(tr(m));walk(document.body);MO.observe(document.body,{childList:true,subtree:true,characterData:true})}
+const LB=document.createElement("button");LB.className="lg";LB.textContent=LANG=="sw"?"English":"Kiswahili";LB.onclick=()=>{try{localStorage.setItem("pcl",LANG=="sw"?"en":"sw")}catch(e){}location.reload()};document.body.append(LB);
+window.addEventListener("hashchange",()=>location.reload());init();
+</script></body></html>
